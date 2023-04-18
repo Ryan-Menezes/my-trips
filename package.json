@@ -10,11 +10,13 @@
     "lint:fix": "eslint src --fix",
     "postinstall": "husky install",
     "prepare": "husky install",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "lint-staged": {
     "src/**/*": [
-      "npm run lint --fix"
+      "npm run lint -- --fix",
+      "npm run test -- --bail"
     ]
   },
   "dependencies": {
@@ -23,9 +25,10 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
     "@babel/preset-typescript": "^7.21.4",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.0",
     "@types/node": "18.15.11",
     "@types/react": "18.0.35",
