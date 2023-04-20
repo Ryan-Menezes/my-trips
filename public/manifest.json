@@ -1,0 +1,21 @@
+{
+  "name": "My Trips",
+  "short_name": "My Trips",
+  "icons": [
+    {
+      "src": "/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#06092B",
+  "background_color": "#06092B",
+  "start_url": "/",
+  "display": "fullscreen",
+  "description": "A simple project starter to work with with TypeScript, React, NextJS and Styled Components"
+}
