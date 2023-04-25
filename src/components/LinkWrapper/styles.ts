@@ -5,11 +5,12 @@ export const Wrapper = styled.div`
   z-index: 1100;
   top: var(--medium);
   right: var(--medium);
-  color: var(--light);
+  color: var(--white);
   cursor: pointer;
 
   svg {
-    transition: color 0.3 ease-in-out;
+    color: var(--white);
+    transition: color 0.3s ease-in-out;
   }
 
   &:hover {
