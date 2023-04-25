@@ -9,7 +9,9 @@ const Main = () => {
       />
 
       <S.Title>React Avançado</S.Title>
-      <S.Description>TypeScript, ReactJS, NextJS, Styled Components</S.Description>
+      <S.Description>
+        TypeScript, ReactJS, NextJS, Styled Components
+      </S.Description>
 
       <S.Illustration
         src="/img/hero-illustration.svg"
