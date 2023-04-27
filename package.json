@@ -10,7 +10,8 @@
     "postinstall": "husky install",
     "prepare": "husky install",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "husky": {
     "hooks": {
@@ -19,6 +20,8 @@
   },
   "dependencies": {
     "@styled-icons/evaicons-outline": "^10.46.0",
+    "graphql": "^16.6.0",
+    "graphql-request": "^6.0.0",
     "leaflet": "^1.9.3",
     "next": "13.3.0",
     "next-pwa": "^5.6.0",
@@ -31,6 +34,9 @@
   "devDependencies": {
     "@babel/preset-env": "^7.21.4",
     "@babel/preset-typescript": "^7.21.4",
+    "@graphql-codegen/add": "^4.0.1",
+    "@graphql-codegen/cli": "3.3.1",
+    "@graphql-codegen/client-preset": "3.0.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.0",
