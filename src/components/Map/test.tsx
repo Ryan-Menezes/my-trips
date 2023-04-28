@@ -1,9 +1,10 @@
 import { render, screen } from '@testing-library/react';
+import mockRouter from 'next-router-mock';
 import Map from '.';
 
 describe('<Map />', () => {
   it('should render without any marker', () => {
-    render(<Map />);
+    render(<Map router={mockRouter} />);
 
     // screen.logTestingPlaygroundURL();
 
@@ -35,7 +36,7 @@ describe('<Map />', () => {
       },
     };
 
-    render(<Map places={[placeOne, placeTwo]} />);
+    render(<Map router={mockRouter} places={[placeOne, placeTwo]} />);
 
     expect(screen.getByTitle(/petrópolis/i)).toBeInTheDocument();
     expect(screen.getByTitle(/reykjavik/i)).toBeInTheDocument();

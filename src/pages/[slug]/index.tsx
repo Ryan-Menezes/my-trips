@@ -22,17 +22,17 @@ export default function Page({ heading, body }: PageProps) {
   }
 
   return (
-    <S.Content>
+    <>
       <LinkWrapper href="/">
-        <CloseOutline size={32} aria-label="Fechar" />
+        <CloseOutline size={32} aria-label="Go back to map" />
       </LinkWrapper>
 
-      <S.Heading>{heading}</S.Heading>
+      <S.Content>
+        <S.Heading>{heading}</S.Heading>
 
-      <S.Body>
-        <div dangerouslySetInnerHTML={{ __html: body }} />
-      </S.Body>
-    </S.Content>
+        <S.Body dangerouslySetInnerHTML={{ __html: body }} />
+      </S.Content>
+    </>
   );
 }
 
