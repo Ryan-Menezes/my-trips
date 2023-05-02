@@ -1,13 +1,17 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import NextNProgress from 'nextjs-progressbar';
+import { DefaultSeo } from 'next-seo';
 
 import GlobalStyles from '@/styles/global';
+import SEO from '@/../next-seo.config';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>My Trips</title>
+        <DefaultSeo {...SEO} />
+
         <link rel="shortcut icon" href="/img/ico-512.png" />
         <link rel="apple-touch-icon" href="/img/ico-512.png" />
         <link rel="manifest" href="/manifest.json" />
@@ -18,12 +22,14 @@ export default function App({ Component, pageProps }: AppProps) {
           integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
           crossOrigin=""
         />
-        <meta
-          name="description"
-          content="A simple project to show my favorite spots in the world."
-        />
       </Head>
       <GlobalStyles />
+      <NextNProgress
+        color="#f231a5"
+        startPosition={0.3}
+        stopDelayMs={200}
+        height={3}
+      />
       <Component {...pageProps} />
     </>
   );

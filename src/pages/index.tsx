@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
+import { NextSeo } from 'next-seo';
 
 import LinkWrapper from '@/components/LinkWrapper';
 import { InfoOutline } from '@styled-icons/evaicons-outline/InfoOutline';
@@ -18,9 +19,15 @@ export default function Home({ places }: MapProps) {
 
   return (
     <>
+      <NextSeo
+        title="My Trips"
+        description="A simple project to show my favorite spots in the world."
+      />
+
       <LinkWrapper href="/about">
         <InfoOutline size={32} aria-label="About" />
       </LinkWrapper>
+
       <Map router={router} places={places} />
     </>
   );
@@ -32,6 +39,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       places,
     },
-    revalidate: 1000,
+    revalidate: 5,
   };
 };

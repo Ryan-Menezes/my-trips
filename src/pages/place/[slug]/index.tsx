@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { CloseOutline } from '@styled-icons/evaicons-outline/CloseOutline';
+import { NextSeo } from 'next-seo';
 
 import LinkWrapper from '@/components/LinkWrapper';
 import client from '@/graphql/client';
@@ -25,6 +26,7 @@ export type PlaceProps = {
     name: string;
     description?: {
       html: string;
+      text: string;
     };
     gallery: ImageProps[];
   };
@@ -39,6 +41,11 @@ export default function Place({ place }: PlaceProps) {
 
   return (
     <>
+      <NextSeo
+        title={`${place.name} - My Trips`}
+        description={place.description?.text}
+      />
+
       <LinkWrapper href="/">
         <CloseOutline size={32} aria-label="Go back to map" />
       </LinkWrapper>
@@ -102,6 +109,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       place,
     },
-    revalidate: 1000,
+    revalidate: 5,
   };
 };

@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { CloseOutline } from '@styled-icons/evaicons-outline/CloseOutline';
+import { NextSeo } from 'next-seo';
 
 import LinkWrapper from '@/components/LinkWrapper';
 import client from '@/graphql/client';
@@ -23,6 +24,8 @@ export default function Page({ heading, body }: PageProps) {
 
   return (
     <>
+      <NextSeo title={`${heading} - My Trips`} />
+
       <LinkWrapper href="/">
         <CloseOutline size={32} aria-label="Go back to map" />
       </LinkWrapper>
@@ -67,6 +70,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       heading: page.heading,
       body: page.body.html,
     },
-    revalidate: 1000,
+    revalidate: 5,
   };
 };
