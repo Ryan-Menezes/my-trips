@@ -12,7 +12,7 @@ import {
   GetPlacesQuery,
 } from '@/graphql/generated/graphql';
 
-import * as S from './styles';
+import * as S from '@/styles/place';
 
 type ImageProps = {
   url: string;

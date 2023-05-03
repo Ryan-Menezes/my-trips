@@ -8,7 +8,7 @@ import client from '@/graphql/client';
 import { GET_PAGES, GET_PAGE_BY_SLUG } from '@/graphql/queries';
 import { GetPageBySlugQuery, GetPagesQuery } from '@/graphql/generated/graphql';
 
-import * as S from './styles';
+import * as S from '@/styles/page';
 
 export type PageProps = {
   heading: string;
